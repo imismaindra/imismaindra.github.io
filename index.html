@@ -9,5 +9,20 @@
   <body>
     <h2 class="center">Halo Gan</h2>
     <img src="undraw_Page_not_found_re_e9o6.png" alt="not found">
+    
+    <script src="/Notif/service-worker.js">
+        const dat = 0;
+        if (dat == 0) {
+            console.log(dat);
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+                    console.log('Service worker telah terdaftar:', registration);
+                }).catch(function (error) {
+                    console.log('Gagal meregistrasikan service worker:', error);
+                });
+            }
+        }
+
+    </script>
   </body>
 </html>
