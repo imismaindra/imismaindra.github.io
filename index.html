@@ -13,7 +13,7 @@
         if (dat == 0) {
             console.log(dat);
             if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+                navigator.serviceWorker.register('/imismaindra.github.io/SW.js',{scope:'/ngitung/'}).then(function (registration) {
                     console.log('Service worker telah terdaftar:', registration);
                 }).catch(function (error) {
                     console.log('Gagal meregistrasikan service worker:', error);
