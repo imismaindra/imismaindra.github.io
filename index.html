@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Homee</title>
-  </head>
-  <body>
-    <h2 class="center">Masih Proses</h2>    
-    <script src="SW.js">
-        const dat = 0;
-        if (dat == 0) {
-            console.log(dat);
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/imismaindra.github.io/SW.js',{scope:'/imismaindra.github.io/'}).then(function (registration) {
-                    console.log('Service worker telah terdaftar:', registration);
-                }).catch(function (error) {
-                    console.log('Gagal meregistrasikan service worker:', error);
-                });
-            }
-        }
 
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Ahmad Maulana Ismaindra</title>
+</head>
+
+<body>
+  <div class="max-w-3xl w-full mx-auto z-10">
+    <div class="flex flex-col">
+      <div class="bg-green-200 border border-white shadow-lg  rounded-3xl p-4 m-4">
+        <div class="flex">
+          <div class=" relative h-32 w-32 sm:mb-0 mb-3">
+            <img src="assets/img/1.jpg" alt="aji" class=" w-32 h-32 object-cover rounded-2xl">
+          </div>
+          <div class="flex-auto justify-evenly">
+            <div class="flex items-center justify-between sm:mt-2">
+              <div class="flex items-center p-5">
+                <div class="flex flex-col">
+                  <div class="w-full flex-none text-3xl text-gray-800 font-bold leading-none">Maulana <br> Ismaindra
+                  </div>
+                  <p>Web Developer</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
 </html>
