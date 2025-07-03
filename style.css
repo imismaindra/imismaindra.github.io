@@ -1,0 +1,489 @@
+/* mobile view 😘*/
+@media only screen and (max-width: 600px) {
+    .gambar {
+        display: none;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    /* background-color: rgb(12, 12, 40); */
+}
+
+nav {
+
+    background-color: #212529;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 11px
+}
+
+nav li:hover {
+    background-color: #dee2e6;
+    border-radius: 5px;
+    color: #212529;
+}
+
+/* Navbar Styles */
+.navbar {
+    /* background-color: rgb(12, 12, 40); */
+    /* color: rgb(243, 243, 243); */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    z-index: 1;
+
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+}
+
+/* Container Styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem;
+    box-sizing: border-box;
+}
+
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80vh;
+    padding: 0 3rem;
+    gap: 40px;
+}
+
+/* Text Section Styles */
+.text {
+    flex: 1;
+    max-width: 50%;
+    /* Membatasi lebar teks */
+}
+
+.title {
+    /* color: rgb(243, 243, 243); */
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid orange;
+    display: inline-block;
+    width: 0;
+    animation: typing 3s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+
+.subtext {
+    /* color: rgb(181, 181, 181); */
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+.top-section,
+.aboutme-section {
+    min-height: 100vh;
+}
+
+/* Image Section Styles */
+.image-section {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    /* Gambar di sebelah kanan */
+}
+
+.gambar {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+
+}
+
+.gambar-saya {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    filter: grayscale(100%);
+    /* Optional: Tambahkan border-radius untuk estetika */
+}
+
+.gambar-saya:hover {
+    filter: grayscale(0);
+}
+
+.aboutme-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    background-color: #212529;
+    color: #f8f9fa;
+    padding: 50px 0;
+}
+
+.aboutme-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+.aboutme-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.aboutme-text {
+    flex: 2;
+    /* Teks mengambil lebih banyak ruang */
+}
+
+.aboutme-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.language {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: -1rem;
+    margin-left: -14.5rem;
+
+}
+
+.language i {
+    filter: grayscale(100%);
+    font-size: xx-large;
+}
+
+.language i:hover {
+    filter: grayscale(0%);
+}
+
+/* Project Section */
+.project {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.project-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px;
+    text-align: center;
+    padding: 15px;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #333;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* contact */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-image img {
+        max-width: 80%;
+    }
+}
+
+/* Contact Section */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-image {
+    flex: 1;
+}
+
+.contact-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact ul li {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.contact ul li i {
+    color: #007bff;
+    margin-right: 10px;
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Social Media Icons */
+.connect {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.connect a {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #212529;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.connect a:hover {
+    color: #ffdd57;
+    transform: scale(1.2);
+}
+
+
+
+
+/* Typewriter Animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 28ch;
+    }
+}
+
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    /* background-color: rgb(12, 12, 40); */
+    /* color: rgb(243, 243, 243); */
+    font-size: 0.9rem;
+}
+
+/* Font Weights */
+.poppins-thin {
+    font-weight: 100;
+}
+
+.poppins-extralight {
+    font-weight: 200;
+}
+
+.poppins-light {
+    font-weight: 300;
+}
+
+.poppins-regular {
+    font-weight: 400;
+}
+
+.poppins-medium {
+    font-weight: 500;
+}
+
+.poppins-semibold {
+    font-weight: 600;
+}
+
+.poppins-bold {
+    font-weight: 700;
+}
+
+.poppins-extrabold {
+    font-weight: 800;
+}
+
+.poppins-black {
+    font-weight: 900;
+}
+
+.poppins-thin-italic {
+    font-weight: 100;
+    font-style: italic;
+}
+
+.poppins-extralight-italic {
+    font-weight: 200;
+    font-style: italic;
+}
+
+.poppins-light-italic {
+    font-weight: 300;
+    font-style: italic;
+}
+
+.poppins-regular-italic {
+    font-weight: 400;
+    font-style: italic;
+}
+
+.poppins-medium-italic {
+    font-weight: 500;
+    font-style: italic;
+}
+
+.poppins-semibold-italic {
+    font-weight: 600;
+    font-style: italic;
+}
+
+.poppins-bold-italic {
+    font-weight: 700;
+    font-style: italic;
+}
+
+.poppins-extrabold-italic {
+    font-weight: 800;
+    font-style: italic;
+}
+
+.poppins-black-italic {
+    font-weight: 900;
+    font-style: italic;
+}

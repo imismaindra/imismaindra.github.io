@@ -2,59 +2,465 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <title>Ahmad Maulana Ismaindra</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ismaindra - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'dark': '#212529',
+                        'light': '#f8f9fa',
+                        'yellow': '#ffd700',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes blink {
+
+            0%,
+            50% {
+                border-color: #ffd700;
+            }
+
+            51%,
+            100% {
+                border-color: transparent;
+            }
+        }
+
+        .typewriter {
+            border-right: 3px solid #ffd700;
+            animation: blink 1s infinite;
+        }
+
+        .grayscale-hover {
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .grayscale-hover:hover {
+            filter: grayscale(0%);
+        }
+    </style>
 </head>
 
-<body>
-  <div class="max-w-md w-full mx-auto z-10">
-    <div class="flex flex-col">
-      <div class=" border border-white shadow-lg  rounded-3xl p-4 m-4">
-        <div class="flex">
-          <div class=" relative h-32 w-32 sm:mb-0 mb-3">
-            <img src="assets/img/1.jpg" alt="aji" class=" w-32 h-32 object-cover rounded-2xl">
-          </div>
-          <div class="flex-auto justify-evenly">
-            <div class="flex items-center justify-between sm:mt-2">
-              <div class="flex items-center p-5">
-                <div class="flex flex-col">
-                  <div class="w-full flex-none text-3xl text-gray-800 font-bold leading-none">Maulana <br> Ismaindra
-                  </div>
-                  <p>Web Developer</p>
+<body class="font-poppins text-dark bg-light">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-dark shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-8">
+                    <div class="text-2xl font-bold text-yellow">Ismaindra</div>
+                    <div class="hidden md:flex space-x-8" id="nav-links">
+                        <a href="#home"
+                            class="text-light hover:text-yellow font-medium transition-colors duration-300">Home</a>
+                        <a href="#about"
+                            class="text-light hover:text-yellow font-medium transition-colors duration-300">About</a>
+                        <a href="#projects"
+                            class="text-light hover:text-yellow font-medium transition-colors duration-300">Projects</a>
+                        <a href="#contact"
+                            class="text-light hover:text-yellow font-medium transition-colors duration-300">Contact</a>
+                    </div>
                 </div>
-              </div>
+                <div class="flex items-center space-x-4">
+                    <a href="cv.pdf" target="_blank" download
+                        class="hidden sm:flex items-center gap-2 bg-transparent border-2 border-yellow text-yellow hover:bg-yellow hover:text-dark px-4 py-2 rounded-lg font-semibold transition-all duration-300">
+                        <i class="fas fa-download"></i>
+                        Download CV
+                    </a>
+                    <button onclick="sayHai()"
+                        class="flex items-center gap-2 bg-yellow hover:bg-yellow-400 text-dark px-4 py-2 rounded-lg font-semibold transition-all duration-300">
+                        <i class="fas fa-hand-wave"></i>
+                        Say Hai
+                    </button>
+                    <button class="md:hidden text-light text-xl" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </div>
-          </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="#home"
+                        class="text-light hover:text-yellow font-medium py-2 transition-colors duration-300">Home</a>
+                    <a href="#about"
+                        class="text-light hover:text-yellow font-medium py-2 transition-colors duration-300">About</a>
+                    <a href="#projects"
+                        class="text-light hover:text-yellow font-medium py-2 transition-colors duration-300">Projects</a>
+                    <a href="#contact"
+                        class="text-light hover:text-yellow font-medium py-2 transition-colors duration-300">Contact</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
+    </nav>
 
-  <!-- //profile -->
-  <div class="max-w-md w-full mx-auto z-10">
-    <div class="flex flex-col">
-      <div class="bg-white border border-white shadow-lg rounded-3xl p-4 m-4">
-        <div class="flex">
-          <div class="flex-auto justify-evenly">
-            <div class="flex items-center justify-between sm:mt-2">
-              <div class="flex items-center p-5">
-                <div class="flex flex-col">
-                  <div class="w-full flex-none text-3xl text-gray-800 font-bold leading-none">Profil
-                  </div>
-                  <p>Saya seorang Mahasiswa yang memiliki kemampuan dalam Membuat Website Profile. Saya menguasai
-                    Wordpress dengan sangat baik dan juga menguasa beberapa bahasa pemograman seperti javascript, HTML,
-                    CSS, C# dan Razor selain itu saya juga menguasai Framework Tailwind CSS dengan Baik.</p>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center bg-light py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <div
+                            class="inline-flex items-center px-4 py-2 bg-yellow text-dark rounded-full text-sm font-medium">
+                            👋 Welcome to my portfolio
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-dark leading-tight">
+                            Hello, I'm <span class="text-yellow">Ismaindra</span>
+                        </h1>
+                        <div class="text-xl sm:text-2xl text-dark font-medium">
+                            <span class="typewriter pr-1" id="typewriter-text"></span>
+                        </div>
+                    </div>
+                    <p class="text-lg text-gray-600 leading-relaxed max-w-2xl">
+                        Second year student majoring in Informatics Engineering at Adhitama Institute of Technology
+                        Surabaya.
+                        Passionate about creating modern, responsive web applications and learning new technologies.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button
+                            class="bg-dark hover:bg-gray-800 text-light px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+                            View My Work
+                        </button>
+                        <button
+                            class="bg-transparent border-2 border-dark text-dark hover:bg-dark hover:text-light px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+                            Get In Touch
+                        </button>
+                    </div>
                 </div>
-              </div>
+                <div class="relative flex justify-center lg:justify-end">
+                    <div class="relative z-9" style="z-index: 9;">
+                        <img src="images/For Porto.png" alt="Ismaindra"
+                            class="w-80 h-96 lg:w-96 lg:h-[500px] object-cover rounded-2xl shadow-2xl">
+                    </div>
+                    <div class="absolute inset-0 bg-yellow rounded-2xl blur-3xl opacity-20 transform rotate-6"></div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <img src="images/me2.jpg?height=400&width=400" alt="About Ismaindra"
+                        class="w-full max-w-md h-96 object-cover rounded-2xl shadow-xl grayscale-hover mx-auto lg:mx-0">
+                    <div
+                        class="absolute -bottom-6 -right-6 w-24 h-24 bg-yellow rounded-full flex items-center justify-center text-dark text-2xl font-bold shadow-lg">
+                        21
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h2 class="text-3xl sm:text-4xl font-bold text-light">About Me</h2>
+                        <div class="w-20 h-1 bg-yellow rounded-full"></div>
+                    </div>
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        I'm a 21-year-old passionate developer currently pursuing my degree in Informatics Engineering.
+                        I have
+                        hands-on experience in web development using modern technologies and frameworks. My journey in
+                        programming started with curiosity and has evolved into a deep passion for creating innovative
+                        digital
+                        solutions.
+                    </p>
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-semibold text-light">Skills & Technologies</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                            <div
+                                class="flex items-center space-x-3 p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-300 border border-yellow border-opacity-20">
+                                <span class="text-2xl">🌐</span>
+                                <span class="font-medium text-light">HTML5</span>
+                            </div>
+                            <div
+                                class="flex items-center space-x-3 p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-300 border border-yellow border-opacity-20">
+                                <span class="text-2xl">🎨</span>
+                                <span class="font-medium text-light">CSS3</span>
+                            </div>
+                            <div
+                                class="flex items-center space-x-3 p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-300 border border-yellow border-opacity-20">
+                                <span class="text-2xl">⚡</span>
+                                <span class="font-medium text-light">JavaScript</span>
+                            </div>
+                            <div
+                                class="flex items-center space-x-3 p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-300 border border-yellow border-opacity-20">
+                                <span class="text-2xl">🐘</span>
+                                <span class="font-medium text-light">PHP</span>
+                            </div>
+                            <div
+                                class="flex items-center space-x-3 p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-300 border border-yellow border-opacity-20">
+                                <span class="text-2xl">⚛️</span>
+                                <span class="font-medium text-light">React</span>
+                            </div>
+                            <div
+                                class="flex items-center space-x-3 p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-300 border border-yellow border-opacity-20">
+                                <span class="text-2xl">🟢</span>
+                                <span class="font-medium text-light">Node.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-dark">Featured Projects</h2>
+                <div class="w-20 h-1 bg-yellow rounded-full mx-auto"></div>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Here are some of the projects I've worked on, showcasing my skills in web development and
+                    problem-solving.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=300" alt="TopUp Store"
+                            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3
+                            class="text-xl font-semibold text-dark group-hover:text-yellow transition-colors duration-300">
+                            TopUp Store</h3>
+                        <p class="text-gray-600 leading-relaxed">A modern e-commerce platform for digital top-up
+                            services built with HTML, CSS, and JavaScript featuring responsive design and user-friendly
+                            interface.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-yellow bg-opacity-20 text-dark rounded-full text-sm font-medium border border-yellow border-opacity-30">HTML</span>
+                            <span
+                                class="px-3 py-1 bg-yellow bg-opacity-20 text-dark rounded-full text-sm font-medium border border-yellow border-opacity-30">CSS</span>
+                            <span
+                                class="px-3 py-1 bg-yellow bg-opacity-20 text-dark rounded-full text-sm font-medium border border-yellow border-opacity-30">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Library Management System"
+                            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div
+                            class="absolute top-4 right-4 bg-yellow text-dark px-3 py-1 rounded-full text-sm font-medium">
+                            Coming Soon</div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3
+                            class="text-xl font-semibold text-dark group-hover:text-yellow transition-colors duration-300">
+                            Library Management System</h3>
+                        <p class="text-gray-600 leading-relaxed">Comprehensive library management system with book
+                            cataloging, member management, and borrowing tracking capabilities.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-yellow bg-opacity-20 text-dark rounded-full text-sm font-medium border border-yellow border-opacity-30">PHP</span>
+                            <span
+                                class="px-3 py-1 bg-yellow bg-opacity-20 text-dark rounded-full text-sm font-medium border border-yellow border-opacity-30">MySQL</span>
+                            <span
+                                class="px-3 py-1 bg-yellow bg-opacity-20 text-dark rounded-full text-sm font-medium border border-yellow border-opacity-30">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Boarding House Management"
+                            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div
+                            class="absolute top-4 right-4 bg-yellow text-dark px-3 py-1 rounded-full text-sm font-medium">
+                            Coming Soon</div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3
+                            class="text-xl font-semibold text-dark group-hover:text-yellow transition-colors duration-300">
+                            Boarding House Management</h3>
+                        <p class="text-gray-600 leading-relaxed">Digital solution for managing boarding house operations
+                            including room booking, payment tracking, and tenant management.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-yellow bg-opacity-20 text-dark rounded-full text-sm font-medium border border-yellow border-opacity-30">React</span>
+                            <span
+                                class="px-3 py-1 bg-yellow bg-opacity-20 text-dark rounded-full text-sm font-medium border border-yellow border-opacity-30">Node.js</span>
+                            <span
+                                class="px-3 py-1 bg-yellow bg-opacity-20 text-dark rounded-full text-sm font-medium border border-yellow border-opacity-30">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=300" alt="E-Money System"
+                            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3
+                            class="text-xl font-semibold text-dark group-hover:text-yellow transition-colors duration-300">
+                            E-Money System</h3>
+                        <p class="text-gray-600 leading-relaxed">Secure digital wallet application with transaction
+                            history, balance management, and payment gateway integration.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-yellow bg-opacity-20 text-dark rounded-full text-sm font-medium border border-yellow border-opacity-30">JavaScript</span>
+                            <span
+                                class="px-3 py-1 bg-yellow bg-opacity-20 text-dark rounded-full text-sm font-medium border border-yellow border-opacity-30">PHP</span>
+                            <span
+                                class="px-3 py-1 bg-yellow bg-opacity-20 text-dark rounded-full text-sm font-medium border border-yellow border-opacity-30">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Online Bookstore"
+                            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3
+                            class="text-xl font-semibold text-dark group-hover:text-yellow transition-colors duration-300">
+                            Online Bookstore</h3>
+                        <p class="text-gray-600 leading-relaxed">Full-featured e-commerce bookstore with shopping cart,
+                            payment processing, and inventory management system.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-yellow bg-opacity-20 text-dark rounded-full text-sm font-medium border border-yellow border-opacity-30">HTML</span>
+                            <span
+                                class="px-3 py-1 bg-yellow bg-opacity-20 text-dark rounded-full text-sm font-medium border border-yellow border-opacity-30">CSS</span>
+                            <span
+                                class="px-3 py-1 bg-yellow bg-opacity-20 text-dark rounded-full text-sm font-medium border border-yellow border-opacity-30">JavaScript</span>
+                            <span
+                                class="px-3 py-1 bg-yellow bg-opacity-20 text-dark rounded-full text-sm font-medium border border-yellow border-opacity-30">PHP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-light">Let's Work Together</h2>
+                <div class="w-20 h-1 bg-yellow rounded-full mx-auto"></div>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+                    I'm always interested in new opportunities and collaborations. Feel free to reach out!
+                </p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-yellow rounded-lg flex items-center justify-center">
+                                <i class="fas fa-envelope text-dark text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-light">Email</h3>
+                                <p class="text-gray-300">imismaindra@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-yellow rounded-lg flex items-center justify-center">
+                                <i class="fas fa-phone text-dark text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-light">Phone</h3>
+                                <p class="text-gray-300">+62 85173329189</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-yellow rounded-lg flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-dark text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-light">Location</h3>
+                                <p class="text-gray-300">Surabaya, Indonesia</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/imismaindra" target="_blank"
+                            class="w-12 h-12 border-2 border-yellow text-yellow rounded-lg flex items-center justify-center hover:bg-yellow hover:text-dark transition-all duration-300">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/imismaindra" target="_blank"
+                            class="w-12 h-12 border-2 border-yellow text-yellow rounded-lg flex items-center justify-center hover:bg-yellow hover:text-dark transition-all duration-300">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="mailto:imismaindra@gmail.com" target="_blank"
+                            class="w-12 h-12 border-2 border-yellow text-yellow rounded-lg flex items-center justify-center hover:bg-yellow hover:text-dark transition-all duration-300">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-600">
+                    <form class="space-y-6" onsubmit="handleSubmit(event)">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium text-light">Name</label>
+                                <input type="text" placeholder="Your name" required
+                                    class="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-yellow focus:border-yellow outline-none transition-all bg-gray-700 text-light">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium text-light">Email</label>
+                                <input type="email" placeholder="your@email.com" required
+                                    class="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-yellow focus:border-yellow outline-none transition-all bg-gray-700 text-light">
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-light">Subject</label>
+                            <input type="text" placeholder="Project inquiry" required
+                                class="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-yellow focus:border-yellow outline-none transition-all bg-gray-700 text-light">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-light">Message</label>
+                            <textarea rows="5" placeholder="Tell me about your project..." required
+                                class="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-yellow focus:border-yellow outline-none transition-all resize-none bg-gray-700 text-light"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-yellow hover:bg-yellow-400 text-dark px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light border-t border-gray-200 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-gray-600">&copy; 2025 Maulana Ismaindra. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
